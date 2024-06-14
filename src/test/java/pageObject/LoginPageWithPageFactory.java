@@ -3,15 +3,16 @@ package pageObject;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 //Page Object model with page factory
 public class LoginPageWithPageFactory {
 
 	WebDriver ldriver;
 
-	public LoginPageWithPageFactory(WebDriver driver) {
-		ldriver = driver;
-
+	public LoginPageWithPageFactory(WebDriver rdriver) {
+		ldriver = rdriver;
+		PageFactory.initElements(rdriver, this);
 	}
 
 	@FindBy(id = "Email")
